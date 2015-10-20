@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:context="http://www.springframework.org/schema/context"    
+    xmlns:mvc="http://www.springframework.org/schema/mvc"    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+    http://www.springframework.org/schema/tx   
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+    http://www.springframework.org/schema/mvc  
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    
+    
+    <!-- 主键扫描方式 配置handler base-package 扫描的controller的路径 -->
+    <context:component-scan base-package="com.bs.**.controller;">
+    </context:component-scan>
+    
+    <!-- 注解映射器  
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    -->
+    <!-- 注解适配器  
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+   	-->
+    <!-- 
+            使用mvc:annotation-driven 可代替上面两个配置,
+    mvc:annotation-driven 会默认加载很多方法，包括json解析器
+    -->
+    <mvc:annotation-driven/>
+        
+    
+     <!-- 适配器视图解析器 
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/xxx/"/>
+		<property name="suffix" value=".jsp"/> 
+	</bean>
+	
+	-->
+
+</beans>
