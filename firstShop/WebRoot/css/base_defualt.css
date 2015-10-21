@@ -266,13 +266,17 @@ to {left:0px;}
 .body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-5col a .gu_p .p3_price b { font-weight: normal; margin-left: 80px;}
 .body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-5col a:hover { border: 1px solid #ff6700; z-index: 10; top: -4px; text-decoration: none; background-color: fff;box-shadow: 2px 2px 15px #888888;}
 
-.search-title{width: 99.5%;min-width:1142px;display:block;height: 130px;border: 1px solid #f8f8f8;top: 12px;position:relative;margin-top: 100px;margin: 100px auto 0 auto;}
+.search-title{width: 99.5%;min-width:1142px;display:block;height: 78px;border: 1px solid #f8f8f8;top: 12px;position:relative;margin-top: 100px;margin: 100px auto 0 auto;}
 .search-title .search-result-body{width:1142px;border:0px solid #ff777;margin: 0 auto 0 auto;overflow: hidden;padding-top: 60px;}
-.search-title .search-result-body .result-title{width:100%;margin: -40 auto 0 auto; padding: 0px 0; overflow: hidden;}
+.search-title .search-result-body .result-title{width:100%;margin: -40px auto 0 auto; padding: 0px 0; overflow: hidden;margin-top: -40px;}
 .search-title .search-result-body .result-title p{ display: block; font-size: 12px; line-height: 48px; color: #797979; white-space: nowrap; text-indent: 20px; border-bottom: 1px solid #c1c1c1;margin-top: 10px;}
 .search-title .search-result-body .result-title p a{cursor: pointer;margin-right: 3px;}
 .search-title .search-result-body .result-title p .emphasize{font-weight:bold}
 
+.search-title .search-result-body .result-title .item-name{margin-top: 1px;}
+.search-title .search-result-body .result-title .item-name h2{color: rgb(66,66,66);font-size: 18px;font-weight: 400;line-height: 30px;}
+.search-title .search-result-body .result-title .item-name h2 .sep{font-family:sans-serif;}
+.search-title .search-result-body .result-title .item-name h2 a{font-size: 14px;}
 
 .search-screen{ width:99%;min-width: 1142px; padding-top: 20px; position: relative; z-index: 1;  }
 .search-screen .screen-body{width: 1142px;margin: 0 auto; padding: 16px 0; overflow: hidden;}
@@ -305,8 +309,40 @@ to {left:0px;}
 .body-item-sheif .item-sheif-body .page_a a.last:hover,
 .body-item-sheif .item-sheif-body .page_a a.next:hover { color: #9f9f9f; background-color: #757575; }
 
+.headTop { position: fixed; left: 0px; top: 0px; z-index: 400; height: 60px; width: 100%; min-width: 1200px; background-color: #fff; border-bottom: 1px solid #bfbfbf;display: none;}
+.headTop .headTop_Box { width: 1060px; margin: 0 auto; height: 60px; position: relative; padding-left: 140px; z-index: 2; }
+.headTop .ht-logo { width: 132px; height: 60px; overflow: hidden; position: absolute; left: 0; top: 0; z-index: 10; }
+.headTop .ht-logo img { display: block; width: 132px; height: 60px; }
+
+.headTop .item-name{left:20px;top:2px; position: absolute; }
+.headTop .item-name h2{color: rgb(66,66,66);font-size: 16px;font-weight: 400;line-height: 28px;}
+.headTop .item-name h2 .sep{font-family:sans-serif;}
+.headTop .item-name h2 a{font-size: 14px;}
 
 
+.headTop .ht-nav { padding-top: 14px; height: 42px; font-size: 0; white-space: nowrap; margin-left: 36px; }
+.headTop .ht-nav li { display: inline-block; *display: inline; *zoom: 1; vertical-align: top; margin: 0 10px; height: 42px; position: relative; }
+
+.headTop .ht-nav li a { display: block; font-size: 16px; color: #616161; line-height: 32px; padding: 0 18px 0 8px; position: relative; }
+
+.headTop .ht-nav li a:hover { text-decoration: none; }
+
+.headTop .buy-btn-div{top:18px; position: absolute;right:20px;}
+.headTop .buy-btn-div a{height: 20px; line-height: 20px; padding: 0 14px; margin: 4px 4px 4px 18px; color: #fff; background-color: #ff6700;font-size: 16px;}
+
+.item-page-body{width: 99.5%;min-width:1142px;display:block;height: 495px;border: 0px solid #ff0000;top: 120px;position:relative;overflow: visible;}
+.grey-backgroup{background-color: #f8f8f8;}/*灰色底色*/
+.item-page-body .item-line{width:1142px;height:100%;border:0px solid #ff777;padding: 30px 0;margin: 0 auto auto auto;}
+.item-page-body .item-line .line-4{width: 40%;float: left;}
+.item-page-body .item-line .line-6{width: 50%;white-space: nowrap;float: left;margin-left: 80px;}
+
+.item-page-body .item-line .line-3{width: 30%;float: left;}
+.item-page-body .item-line .line-7{width: 70%;white-space: nowrap;float: left;}
+
+.item-page-body .item-line .line-5{width: 50%;float: left;}
+
+.item-page-body .item-line .line-2{width: 100%;margin: 0 auto;text-align: center;}
+.item-page-body .item-line .line-8{width: 100%;margin: 0 auto;text-align: center;}
 
 
 

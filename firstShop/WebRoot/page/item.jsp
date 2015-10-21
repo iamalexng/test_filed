@@ -7,14 +7,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>商品页</title>
     <jsp:include page="${basePath}public/fshop_include.jsp" flush="false" />
 	<script src="<%=basePath%>/js/index.js"></script>
-	<script src="<%=basePath%>/js/homepage.js"></script>
+	<script src="<%=basePath%>/js/item.js"></script>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/base_defualt.css" media="all" />
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/animate.css" media="all" />
+	<script src="<%=basePath%>/js/wow.js"></script>
   </head>
   <script type="text/javascript">
   $(document).ready(function(){
@@ -23,21 +25,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
  
   function queryShopStyle(){
-  	var url;
-  //	url="<%=basePath%>TestController/queryUserAndReturnString.action"; //返回字符串的测试
-  //	url="<%=basePath%>TestController/queryUserAndReturnBean.action";//直接返回一个对象
-  	url="<%=basePath%>TestController/queryUserAndReturnMap.action";//返回map
-  	
-  	
+  	var url="<%=basePath%>TestController/queryUser.action";
 		$.ajax({
 				url : url,
 				data: {userId:3},
 				type : 'POST',
-			//	dataType : "json",
-			//	contentType: "application/json;charset=utf-8",
+				dataType : "json",
 				success : function(data) {
-				
-				alert("成功返回：用户昵称是--"+data.secUser.nickName);
+				alert("success");
 				}
 				
 				});
@@ -56,15 +51,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </script>
   
   <body>
-  <div style="height: 4001px;" id="background_div">
+  <div style="height: 4001px;" id="background_div"> 
    
     <!-- L1 topbar -->
   <div class="site-topbar" id="topbar">
 	  <div class="container">
 	  This is our JSP  HomePage,恭喜你，成功跑起了该项目
+	  
 	  	<a style="color:#ff6700;cursor: pointer;">风格1</a>
 	  	<span >|</span>
 	  	<a style="color:#ff0000;cursor: pointer;">风格2</a>
+		
 		  <div class="topbar-info" >
 		  	<a onclick="queryShopStyle();" href="javascript:void(0)">测试查询数据库</a>
 		  	<a>登录</a>
@@ -87,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li class="nav-item" id="nav_all_item"> 
 						<a class="link" href="javascript:void(0);">
 						<span class="text">全部商品类型</span>
-						<span class="arrow"></span>
+						<i></i>
 						</a>
 					</li>
 					<li class="nav-item" id="nav_item0">
@@ -140,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<ul>
 					<li class="nav-item" style="list-style:none;">
 					<div id="site-toolbar" class="site-toolbar">
-				  		<div class="toolbar-body toolbar-homepage">
+				  		<div class="toolbar-body toolbar-searchpage">
 				  		<ul>
 				  			<li class="item item-first">
 				  				<a>服装、珠宝</a>
@@ -280,7 +277,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div id="J_keywordList" class="keyword-list">
 						<ul class="result-list">
 							<li>
-							<a href="<%=basePath%>page/search.jsp" target="_blank" >牛仔裤
+							<a style="cursor:pointer;">牛仔裤
 							<span class="result">约有22件</span>
 							</a>
 							</li>
@@ -291,17 +288,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 							</li>
 							<li><a
-								href="aaa" target="_top">内裤<span
+								href="http://search.mi.com/search_%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF">内裤<span
 									class="result">约有5种</span>
 							</a>
 							</li>
 							<li><a
-								href="<%=basePath%>/page/search.jsp">情趣内衣<span
+								href="http://search.mi.com/search_WiFi">情趣内衣<span
 									class="result">约有999件</span>
 							</a>
 							</li>
 							<li><a
-								href="<%=basePath%>/page/search.jsp">背包<span
+								href="http://search.mi.com/search_%E8%87%AA%E6%8B%8D%E6%9D%86">背包<span
 									class="result">约有14种</span>
 							</a>
 							</li>
@@ -366,7 +363,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="items-first">
 										<div class="figure-thumb">
 											<a href="http://www.baidu.com/" >
-											<img src="./images/spring_tree.png" alt="长裤" width="110" height="110">
+											<img src="./images/spring_tree1.png" alt="长裤" width="110" height="110">
 											</a>
 										</div>
 										<p class="price">
@@ -376,7 +373,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="items">
 										<div class="figure-thumb">
 											<a href="http://www.baidu.com/" >
-											<img src="./images/summer_tree.png" alt="短裤" width="110" height="110">
+											<img src="./images/summer_tree1.png" alt="短裤" width="110" height="110">
 											</a>
 										</div>
 										<p class="price">
@@ -386,7 +383,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="items">
 										<div class="figure-thumb">
 											<a href="http://www.baidu.com/" >
-											<img src="./images/autumn_tree.png" alt="内裤" width="110" height="110">
+											<img src="./images/autumn_tree1.png" alt="内裤" width="110" height="110">
 											</a>
 										</div>
 										<p class="price">
@@ -468,7 +465,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="items-first">
 										<div class="figure-thumb">
 											<a href="http://www.baidu.com/" >
-											<img src="./images/spring_tree.png" alt="箱类" width="110" height="110">
+											<img src="./images/spring_tree1.png" alt="箱类" width="110" height="110">
 											</a>
 										</div>
 										<p class="price">
@@ -478,7 +475,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="items">
 										<div class="figure-thumb">
 											<a href="http://www.baidu.com/" >
-											<img src="./images/summer_tree.png" alt="包类" width="110" height="110">
+											<img src="./images/summer_tree1.png" alt="包类" width="110" height="110">
 											</a>
 										</div>
 										<p class="price">
@@ -551,385 +548,101 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</ul>
 	</div>
 	<!-- 结束测试1区 -->
-
 </div>
-
- <!-- L1 列表 banner图片广告区  -->
- 		<div class="hander-banner">
-							<div class="hander-banner-body">
-								<ul class="banner-list">
-									<li>
-									
-									<a href="http://www.baidu.com" class="banner-img">
-										<img src="<%=basePath%>images/homePage/banner/banner2.jpg" alt="">
-									</a>
-									<div class="banner-text">
-										<p>这是一句广告语</p>					
-									</div>
-									</li>
-									<li>
-									<a href="#" class="banner-img">
-										<img src="<%=basePath%>images/homePage/banner/banner2.jpg" alt="">
-									</a>
-									<div class="banner-text">
-										<p>这是二句广告语</p>					
-									</div>
-									</li>
-									<li>
-									<a href="#" class="banner-img">
-										<img src="<%=basePath%>images/homePage/banner/banner3.jpg" alt="">
-									</a>
-									<div class="banner-text">
-										<p>这是卖衣服的广告语</p>					
-									</div>
-									</li>
-									<li>
-									<a href="#" class="banner-img">
-										<img src="<%=basePath%>images/homePage/banner/banner4.jpg" alt="">
-									</a>
-									<div class="banner-text">
-										<p>这是Q版广告语</p>					
-									</div>
-									</li>
-									<li>
-									<a href="#" class="banner-img">
-										<img src="<%=basePath%>images/homePage/banner/banner5.jpg" alt="">
-									</a>
-									<div class="banner-text">
-										<p>这是汽车广告语</p>					
-									</div>
-									</li>
-								</ul>
-								
-								<a  id="prev-img" class="banner-handle"></a>
-								<a  id="next-img" class="banner-handle"></a>
-								<ul id="focus-bubble">
-								<!-- jq加
-								<li class="current"></li>
-								<li></li>
-								<li></li>
-								<li></li>
-								<li></li>
-								 -->
-								</ul>
-							</div>
-		</div>		
-  <!-- L1 列表 banner图片广告区 结束 -->
-  
- <!-- L1 -->
-  <div class="body-item-sheif item-sheif-backgroup1">
-  	<div class="item-sheif-body">
-  	<p class="item-sheif-title">这是商品区-1楼 3列区</p>
-  		<ul class="item-sheif-ul">
-								<li class="sheif-li sheif-li-3col sheif-item-title-1">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/dianshi.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">小米电视</p>
-											<p class="p2">55寸|超大|高清</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>5149元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-3col sheif-item-title-2">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/pingban.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">小米平板</p>
-											<p class="p2">超薄、装B</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>888元</b>
-												</span>
-											</p>
-											<p class="p4">小米平板,这是一个全新的平板电脑,这段是介绍的文字内容</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-3col sheif-item-title-3">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/xiangji.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">小米相机</p>
-											<p class="p2">偷拍神器</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>1499元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-  		</ul>
-  	</div>
-  </div>
-  <!-- 商品1区结束 -->
-  
-   <div class="body-item-sheif">
-  	<div class="item-sheif-body">
-  	<p class="item-sheif-title animated fadeInLeft">这是商品区-2楼 4列区</p>
-  		<ul class="item-sheif-ul">
-								<li class="sheif-li sheif-li-4col sheif-item-title-4">
-									<a href="javascript:void(0);">
-										<i class="i_img" zoom="N">
-											<img src="<%=basePath%>images/homePage/item/shubiao.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">苹果鼠标</p>
-											<p class="p2">新颖|轻便|清新</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-4col">
-									<a href="javascript:void(0);">
-										<i class="i_img" zoom="N">
-											<img src="<%=basePath%>images/homePage/item/jiezhi.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">苹果手机壳</p>
-											<p class="p2">透明、耐摔</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-4col">
-									<a href="javascript:void(0);">
-										<i class="i_img" zoom="N">
-											<img src="<%=basePath%>images/homePage/item/shoubiao.jpg" />
-										</i>
-										<div class="gu_p">
-											<p class="p1">苹果手表</p>
-											<p class="p2">能换两个肾喔</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-4col">
-									<a href="javascript:void(0);">
-										<i class="i_img" zoom="N">
-											<img src="<%=basePath%>images/homePage/item/yanjing.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">苹果眼镜</p>
-											<p class="p2">暂无货</p>
-											<p class="p3">
-												
-											</p>
-										</div>
-									</a>
-								</li>
-								 
-  		</ul>
-  	</div>
-  </div>
-  <!-- 3楼，楼中广告区 -->
-   
-   <div class="body-item-sheif item-sheif-backgroup1">
-  	<div class="item-sheif-body">
-  	<p class="item-sheif-title animated fadeInLeft">这是商品区-3楼 5列区</p>
-  		<ul class="item-sheif-ul">
-								<li class="sheif-li sheif-li-5col">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/suishenting.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">苹果随身听</p>
-											<p class="p2">3D环回立体</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-5col">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/suishenting.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">苹果随身听</p>
-											<p class="p2">3D环回立体</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-5col">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/jiezhi.jpg" />
-										</i>
-										<div class="gu_p">
-											<p class="p1">苹果戒指</p>
-											<p class="p2">求婚戒指</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-5col">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/jiezhi.jpg" />
-										</i>
-										<div class="gu_p">
-											<p class="p1">苹果戒指</p>
-											<p class="p2">求婚戒指</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-5col">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/jiezhi.jpg" />
-										</i>
-										<div class="gu_p">
-											<p class="p1">苹果戒指</p>
-											<p class="p2">求婚戒指</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>7888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-  		</ul>
-  	</div>
-  </div>
-  
-  
-  <!-- L1 4楼区 -->
-  <div class="body-item-sheif item-sheif-backgroup1">
-  	<div class="item-sheif-body">
-  	<p class="item-sheif-title">这是商品区-4楼 楼层广告区</p>
-  		<ul class="item-sheif-ul">
-								<li class="sheif-li sheif-li-3col sheif-item-title-1">
-									<div class="ads">
-										<ul class="ads-list">
-											<li class="ads-list-li">
-											<a href="http://www.baidu.com" class="ads-img" >
-												<img src="<%=basePath%>images/homePage/item/xiangji.jpg" alt="">
-											</a>
-											</li>
-											<li class="ads-list-li">
-											<a href="http://www.baidu.com" class="ads-img" >
-												<img src="<%=basePath%>images/homePage/item/pingban.jpg" alt="">
-											</a>
-											</li>
-											<li class="ads-list-li">
-											<a href="http://www.baidu.com" class="ads-img" >
-												<img src="<%=basePath%>images/homePage/item/zipaigun.png" alt="">
-											</a>
-											</li>
-											<li class="ads-list-li">
-											<a href="http://www.baidu.com" class="ads-img" >
-												<img src="<%=basePath%>images/homePage/item/chongdianqi.png" alt="">
-											</a>
-											</li>
-											<li class="ads-list-li">
-											<a href="http://www.baidu.com" class="ads-img" >
-												<img src="<%=basePath%>images/homePage/item/usbxian.png" alt="">
-											</a>
-											</li>
-										</ul>
-										<a  id="ads-prev-img" class="ads-handle"></a>
-										<a  id="ads-next-img" class="ads-handle"></a>
-										<ul id="ads-focus-bubble">
-										</ul>
-									</div>
-								</li>
-								<li class="sheif-li sheif-li-3col sheif-item-title-2">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/pingban.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">小米平板</p>
-											<p class="p2">超薄、装B</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>888元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-								<li class="sheif-li sheif-li-3col sheif-item-title-3">
-									<a href="javascript:void(0);">
-										<i class="i_img">
-											<img src="<%=basePath%>images/homePage/item/xiangji.jpg" />
-										</i>
-										<div class="gu_p" >
-											<p class="p1">小米相机</p>
-											<p class="p2">偷拍神器</p>
-											<p class="p3">
-												<span class="p3_price">
-													<b>1499元</b>
-												</span>
-											</p>
-										</div>
-									</a>
-								</li>
-  		</ul>
-  	</div>
-  </div>
-  <!-- 商品4区结束 -->
-  
-  <!-- L1 左侧电梯Left  -->
-  <div id="left_Div" style="width:80px">
-	<div  id="left_Div_Open" style="display: block; position: fixed; left: 0px; bottom:80px;z-index:100;">
-	 <div class="left">
-	 	<ul>
-	 	<li><a id="left_top" style="font-size: 12px" href="#" onmousemove="topFont(this.id);" >Top</a></li>
-	 	<li><a id="left_1F" >1F</a></li>
-	 	<li><a id="left_2F" >2F</a></li>
-	 	<li><a id="left_3F" >3F</a></li>
-	 	<li><a id="left_4F" >4F</a></li>
-	 	<li><a id="left_5F" >5F</a></li>
-	 	</ul>
-	 </div>
-  </div>
-</div>
-
-	
+<!-- 这里结束公共的头部部分 -->
+<!-- 商品标题  -->
+	<div class="search-title item-sheif-backgroup1">
+		<div class="search-result-body">
+		<div class="result-title">
+			<div class="item-name">
+			<h2>小米手机 <span class="sep">|</span><a>小米NOTE</a></h2>
+			</div> 
+		</div>
+		</div>
+	</div>
+<!-- 下滑时才显示的标题 -->
+<div class="headTop">
+		<div class="headTop_Box">
+		<div class="item-name">
+		<h2>小米手机 <span class="sep">|</span><a>小米NOTE</a></h2>
+		</div>
+			
+			<!--nav-->
+			<ul class="ht-nav" id="htNav">
+				<li>
+					<a href="javascript:void(0);">首页</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">衣服<i></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">裤子.裙子<i></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">鞋子</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">箱包</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">帮助中心</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">联系我们</a>
+				</li>
+			</ul>
+			<!--用户登录-->
+			<div class="buy-btn-div" >
+				<a href="javascript:void(0);">立即购买</a>
+			</div>
+		</div>
+	</div>
+<!-- 下滑标题结束 -->
+			<div class="item-page-body">
+				<div class="item-line">
+					<div class="line-6">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_001.png" >
+					</div>
+					<div class="line-4">
+						<p class="wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="1s" style="font-size:32px">小米<font color="#ff6700">Note</font></p>
+						<p class="wow fadeIn animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="1s">大屏旗舰，HiFi 双卡双待</p>
+						<p class="wow fadeIn animated" style="font-size:18px" data-wow-delay="1.5s" data-wow-duration="1s">直降200 双网通版1799元起/直降100 全网通版1999元</p>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+			<div class="item-page-body grey-backgroup">
+				<div class="item-line">
+				<div class="line-5">
+						<p class="wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="1s" style="font-size:32px">为玻璃赋予生命
+工艺与手感，更进一步</p>
+						<p class="wow fadeIn animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="1s">前后曲面玻璃  /  铝合金金属边框
+6.95mm 纤薄机身</p>
+						<p class="wow fadeIn animated" style="font-size:18px" data-wow-delay="1.5s" data-wow-duration="1s"><a style="cursor: pointer;color:#ff6700;">了解性能></a></p>
+					</div>
+					<div class="line-5">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_005.png" data-wow-duration="1s" class="wow fadeInLeft animated">
+					</div>
+					
+				</div>
+			</div>
+			<!--  -->
+			<div class="item-page-body">
+				<div class="item-line">
+				<section>
+				<div class="line-2">
+						<p class="wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="1s" style="font-size:32px">多颜色版本选择</p>
+						<p class="wow fadeInLeft animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="1s"><a style="cursor: pointer;color:#ff6700;"> 天然竹特别版 > 标准版设计> 女神版 > 顶配版 ></a></p>
+					</div>
+					<div class="line-8">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_009.png" data-wow-duration="1s"  class="wow fadeIn animated" style="margin-left: -150px;margin-top: -50px;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_007.png" data-wow-duration="1s" data-wow-delay="0.8s" class="wow fadeInLeft animated" style="margin-left: -100px;margin-top: -35px;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_006.png" data-wow-duration="1s" data-wow-delay="1.6s" class="wow fadeIn animated" style="margin-left: -50px;margin-top: -20px;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_008.png" data-wow-duration="1s" data-wow-delay="3.2s" class="wow fadeInLeft animated" style="margin-left: 0px;margin-top: -10px;">
+					</div>
+					</section>
+				</div>
+			</div>
 </div>
   </body>
 </html>

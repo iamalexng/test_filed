@@ -55,6 +55,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="site-topbar" id="topbar">
 	  <div class="container">
 	  This is our JSP  HomePage,恭喜你，成功跑起了该项目
+	  	<a style="color:#ff6700;cursor: pointer;">风格1</a>
+	  	<span >|</span>
+	  	<a style="color:#ff0000;cursor: pointer;">风格2</a>
 		  <div class="topbar-info" >
 		  	<a onclick="queryShopStyle();" href="javascript:void(0)">测试查询数据库</a>
 		  	<a>登录</a>
