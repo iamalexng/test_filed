@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+/* 学习小米商城样式 */
+/*全局*/
+body {margin: 0}/*四边margin0 px*/
+.container {width: 1026px;*zoom: 1;margin-right: auto;margin-left: auto}/*宽度1226px,左右边距 自动*/
+.container2 {width: 226px;*zoom: 1;margin-right: auto;margin-left: auto}/*宽度1226px,左右边距 自动*/
+a:active,a:hover {outline: 0}/*a标签outline 0*/
+a {color: #757575;text-decoration: none}/*a标签颜色改变，不出现下划线*/
+a:hover {color: #ff6700;text-decoration: none}/*a标签获取焦点时颜色改变，不出现下划线*/
+
+/*左侧电梯*/
+.left{ margin:0 auto;width:40px;line-height:14px;border:0px}
+.left ul{width:40px;}
+.left ul li{list-style-type:none;width: 40px;}
+.left ul li a{color:#b0b0b0}
+.left ul li a:hover{color:#ffffff;background-color: #ff6700}
+
+/*topbar    相对定位,有效的优先级为30，高度40px,字体12px,字体颜色#b0b0b0,背景色#333,清除浮动*/
+.site-topbar{position:relative;z-index:30;height:40px;font-size:12px;color:#b0b0b0;background:#333;clear:both}
+.site-topbar a{color:#b0b0b0}/*默认的字体颜色*/
+.site-topbar a:hover{color:#fff}/*hover时的颜色*/
+/*topbar中 info限高40，与topbar相同，效果为 垂直居中*/
+.site-topbar .topbar-info {line-height: 40px}
+/*topbar中cart 与info 共同样式*/
+.site-topbar .topbar-cart,.site-topbar .topbar-info{position: relative;float: right;_display: inline;height: 40px}
+.site-topbar .topbar-info .sep{float: left;color: #424242}
+
+/*siteheader 样式, 相对定位,有效优先级20,高度100PX*/
+.site-header {position: relative;z-index: 20;height: 100px}/*菜单栏区域,包括了左侧菜单及上菜单*/
+.site-header .header-logo {float: left;width: 62px;margin-top: 22px}/*菜单栏中logo*/
+
+/*传统风格*/
+.site-header .header-nav {float: left;width: 850px;margin-top: 200px;}/*靠左,宽度850px*/
+.site-header .header-search {float: right;width: 296px;margin-top: -225px;margin-right: 400px;}
+

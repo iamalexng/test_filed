@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>
+
+	<!-- 全局系统配置 -->
+
+
+	<!-- 配置别名 -->
+ 	<typeAliases>
+ 		<package name="com.bs.fshop.po"/><!-- name= po路径 -->
+ 		<!--<package name=""/>-->
+ 	</typeAliases>
+
+
+<!-- 
+配置mapper
+由于使用spring和mybaties整合对mapper进行扫描，这里不需要配置
+但必须遵循mapper.xml和mapper.java同名，且在同一目录当中
+ -->
+ <!-- 
+ <mapp
+  -->
+</configuration>
