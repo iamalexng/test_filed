@@ -8,6 +8,9 @@
 		  //setSearchTitle("首页,手机,手机型号1,颜色2");//工具js中有方法
 		  searchScreen();
 		  setInterval("showSuspentionTitile()", 200);
+		  
+		  wow = new WOW({});
+		  wow.init();
 	}
 	
 	//初始化toolbar,先隐藏，在移动到指定地方出现反转动画

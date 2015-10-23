@@ -601,7 +601,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="item-page-body">
 				<div class="item-line">
 					<div class="line-6">
-						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_001.png" >
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_001.png" data-wow-delay="0.6s" data-wow-duration="1s">
 					</div>
 					<div class="line-4">
 						<p class="wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="1s" style="font-size:32px">小米<font color="#ff6700">Note</font></p>
@@ -618,7 +618,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 工艺与手感，更进一步</p>
 						<p class="wow fadeIn animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="1s">前后曲面玻璃  /  铝合金金属边框
 6.95mm 纤薄机身</p>
-						<p class="wow fadeIn animated" style="font-size:18px" data-wow-delay="1.5s" data-wow-duration="1s"><a style="cursor: pointer;color:#ff6700;">了解性能></a></p>
+						<p class="wow fadeIn animated" style="font-size:18px" data-wow-delay="1s" data-wow-duration="1s"><a style="cursor: pointer;color:#ff6700;">了解性能></a></p>
 					</div>
 					<div class="line-5">
 						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_005.png" data-wow-duration="1s" class="wow fadeInLeft animated">
@@ -632,13 +632,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<section>
 				<div class="line-2">
 						<p class="wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="1s" style="font-size:32px">多颜色版本选择</p>
-						<p class="wow fadeInLeft animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="1s"><a style="cursor: pointer;color:#ff6700;"> 天然竹特别版 > 标准版设计> 女神版 > 顶配版 ></a></p>
+						<p class="wow fadeInLeft animated" style="font-size:18px;margin-top:18px" data-wow-delay="1s" data-wow-duration="2s"><a style="cursor: pointer;color:#ff6700;"> 天然竹特别版 > 标准版设计> 女神版 > 顶配版 ></a></p>
 					</div>
 					<div class="line-8">
-						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_009.png" data-wow-duration="1s"  class="wow fadeIn animated" style="margin-left: -150px;margin-top: -50px;">
-						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_007.png" data-wow-duration="1s" data-wow-delay="0.8s" class="wow fadeInLeft animated" style="margin-left: -100px;margin-top: -35px;">
-						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_006.png" data-wow-duration="1s" data-wow-delay="1.6s" class="wow fadeIn animated" style="margin-left: -50px;margin-top: -20px;">
-						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_008.png" data-wow-duration="1s" data-wow-delay="3.2s" class="wow fadeInLeft animated" style="margin-left: 0px;margin-top: -10px;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_009.png" data-wow-duration="1s"  class="wow fadeIn animated" style="z-index:10;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_007.png" data-wow-duration="1s" data-wow-delay="0.8s" class="wow fadeInLeft animated" style="z-index:12;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_006.png" data-wow-duration="1s" data-wow-delay="1.6s" class="wow fadeInLeft animated" style="z-index:14;">
+						<img alt="" src="<%=basePath%>images/homePage/item/mi_note_008.png" data-wow-duration="1s" data-wow-delay="2.4s" class="wow fadeInLeft animated" style="z-index:16;">
 					</div>
 					</section>
 				</div>
