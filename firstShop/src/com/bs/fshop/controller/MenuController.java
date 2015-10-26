@@ -1,23 +1,18 @@
 package com.bs.fshop.controller;
 
-import java.lang.annotation.Annotation;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.jws.soap.InitParam;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-//import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bs.fshop.mapper.SecUserMapper;
-import com.bs.fshop.po.SecUser;
-import com.bs.fshop.service.SecUserService;
-import com.mysql.fabric.xmlrpc.base.Array;
+import eu.bitwalker.useragentutils.Browser;
+import eu.bitwalker.useragentutils.OperatingSystem;
+import eu.bitwalker.useragentutils.UserAgent;
+
 
 /**
  * @title:
@@ -33,16 +28,28 @@ import com.mysql.fabric.xmlrpc.base.Array;
 @RequestMapping("/MenuController")
 public class MenuController {
 
-	/*
-	 * @Autowired private SecUserService secUserService;
-	 */
-
+	@Autowired  
+	private  HttpServletRequest request;
+	
+	
 	@RequestMapping(value = "/indexHomePage")
-	public ModelAndView indexHomePage() throws Exception {
+	public @ResponseBody String indexHomePage() throws Exception {
 		System.out.println("init page");
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("/page/index.jsp");
-		return modelAndView;
+		String ua = request.getHeader("User-Agent");
+		UserAgent userAgent=UserAgent.parseUserAgentString(ua);
+		Browser browser = userAgent.getBrowser();  
+	    OperatingSystem os = userAgent.getOperatingSystem();
+	    
+	    System.out.println("browser="+browser+",,OperatingSystem="+os);
+	    
+	    String result;
+	    if(os.toString().contains("WINDOWS")){
+	    	result="pc";
+	    }else{
+	    	result="mobile";
+	    }
+	    
+		return result;
 	}
 
 }

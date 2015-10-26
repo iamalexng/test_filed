@@ -39,6 +39,7 @@ public class TestController {
 	private  HttpServletRequest request;
 	
 	
+	
 	@RequestMapping(value="/queryUser")
 	public ModelAndView queryUser(Integer userId) throws Exception{
 		
@@ -50,6 +51,7 @@ public class TestController {
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("secUser", secUser1);
 		modelAndView.setViewName("/page/test/test.jsp");
+		
 		
 		return modelAndView;
 		
