@@ -19,12 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <script type="text/javascript">
   $(document).ready(function(){
   init();
+  queryShopStyle();
   });
   
  
   function queryShopStyle(){
   	var url;
-  //	url="<%=basePath%>TestController/queryUserAndReturnString.action"; //返回字符串的测试
+  	//url="<%=basePath%>TestController/queryUserAndReturnString.action"; //返回字符串的测试
   //	url="<%=basePath%>TestController/queryUserAndReturnBean.action";//直接返回一个对象
   	url="<%=basePath%>TestController/queryUserAndReturnMap.action";//返回map
   	
@@ -33,13 +34,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				url : url,
 				data: {userId:3},
 				type : 'POST',
-			//	dataType : "json",
-			//	contentType: "application/json;charset=utf-8",
+				dataType : "json",
+				contentType: "application/json;charset=utf-8",
 				success : function(data) {
-				
-				alert("成功返回：用户昵称是--"+data.secUser.nickName);
+				//alert(data);
+				//alert("成功返回：用户昵称是--"+data.secUser.nickName);
 				}
-				
 				});
   }
   

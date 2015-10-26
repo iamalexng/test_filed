@@ -19,6 +19,8 @@
     <context:component-scan base-package="com.bs.**.controller;">
     </context:component-scan>
     
+    <mvc:view-controller path="/" view-name="redirect:/MenuController/indexHomePage"/>
+    
     <!-- 注解映射器  
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     -->
@@ -39,5 +41,14 @@
 	</bean>
 	
 	-->
+	
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+			<!-- 系统设定的全局拦截器 -->
+		<mvc:interceptor>	
+			<mvc:mapping path="/**"/><!-- /**是拦截该拦截根及所有子目录,/*仅拦截根目录 -->
+			<bean class="com.bs.fshop.interceptor.GlobalSettingsInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>

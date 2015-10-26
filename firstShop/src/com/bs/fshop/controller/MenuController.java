@@ -4,6 +4,7 @@ import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.soap.InitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,26 +32,17 @@ import com.mysql.fabric.xmlrpc.base.Array;
 @Controller
 @RequestMapping("/MenuController")
 public class MenuController {
-	
-	/*
-	@Autowired
-	private SecUserService secUserService;
-	*/
-	
-	@RequestMapping(value="/queryUser")
-	public ModelAndView queryUser() throws Exception{
-		
-		/*
-		SecUser secUser1=secUserService.selectByPrimaryKey(1);
-		
-		ModelAndView modelAndView=new ModelAndView();
-		modelAndView.addObject("secUser", secUser1);
-		modelAndView.setViewName("/page/test/test.jsp");
-		
-		return modelAndView;
-		*/
-		return null;
-	}
 
+	/*
+	 * @Autowired private SecUserService secUserService;
+	 */
+
+	@RequestMapping(value = "/indexHomePage")
+	public ModelAndView indexHomePage() throws Exception {
+		System.out.println("init page");
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/page/index.jsp");
+		return modelAndView;
+	}
 
 }
