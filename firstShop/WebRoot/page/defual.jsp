@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="eu.bitwalker.useragentutils.Browser" %>
+<%@page import="eu.bitwalker.useragentutils.OperatingSystem" %>
+<%@page import="eu.bitwalker.useragentutils.UserAgent" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,42 +10,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>商城首页</title>
     <jsp:include page="${basePath}public/fshop_include.jsp" flush="false" />
-	<script src="<%=basePath%>/js/index.js"></script>
-	<script src="<%=basePath%>/js/homepage.js"></script>
-	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/base_defualt.css" media="all" />
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
   </head>
-  <script type="text/javascript">
-  $(document).ready(function(){
-  getUserAgent();
-  });
-  
- 
-  function getUserAgent(){
-  	var url;
-  	url="<%=basePath%>MenuController/indexHomePage.action"; //返回字符串的测试
-		$.ajax({
-				url : url,
-				data: {userId:3},
-				type : 'POST',
-				//dataType : "json",
-				//contentType: "application/json;charset=utf-8",
-				success : function(data) {
-				if(data=="pc"){
-				location.href ="<%=basePath%>page/index.jsp";
-				}else{
-				location.href ="<%=basePath%>page/m_index.jsp";
-				}
-				
-				}
-				});
-  }
-  </script>
-  
   <body>
+   <%
+  	String ua = request.getHeader("User-Agent");
+	UserAgent userAgent=UserAgent.parseUserAgentString(ua);
+	Browser browser = userAgent.getBrowser();  
+	OperatingSystem os = userAgent.getOperatingSystem();
+	 if(os.toString().contains("WINDOWS")){
+	%>
+	<jsp:forward page="index.jsp"></jsp:forward>
+	   <%
+	    }else{
+	    %>
+	 <jsp:forward page="m_index.jsp"></jsp:forward>
+	  <% } %>
+   
   </body>
 </html>

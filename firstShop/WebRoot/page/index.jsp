@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>商城首页</title>
     <jsp:include page="${basePath}public/fshop_include.jsp" flush="false" />
 	<script src="<%=basePath%>/js/index.js"></script>
 	<script src="<%=basePath%>/js/homepage.js"></script>
