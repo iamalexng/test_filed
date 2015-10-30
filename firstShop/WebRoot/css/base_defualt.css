@@ -42,7 +42,7 @@ to {left:0px;}
 .left ul{width:40px;}
 .left ul li{list-style-type:none;width: 40px;}
 .left ul li a{color:#b0b0b0}
-.left ul li a:hover{color:#ffffff;background-color: #ff6700}
+.left ul li a:hover{color:#ffffff;background-color: #ff6700;}
 
 /*topbar    相对定位,有效的优先级为30，高度40px,字体12px,字体颜色#b0b0b0,背景色#333,清除浮动*/
 .site-topbar{position:relative;z-index:30;height:40px;font-size:12px;color:#b0b0b0;background:#333;clear:both;width: 100%;}
@@ -250,7 +250,7 @@ to {left:0px;}
 .body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-4col a .gu_p .p3_price { width: 178px; font-size: 14px; line-height: 40px; text-align: center; color: #ff6700; }
 .body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-4col a .gu_p .p3_price i { }
 .body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-4col a .gu_p .p3_price b { font-weight: normal; margin-left: 80px;}
-.body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-4col a:hover { border: 1px solid #ff6700; z-index: 10; top: -0px; text-decoration: none; background-color: #fff;box-shadow: 2px 2px 15px #888888;}
+.body-item-sheif .item-sheif-body .item-sheif-ul .sheif-li-4col a:hover { border: 1px solid #ff6700; z-index: 10; top: -4px; text-decoration: none; background-color: #fff;box-shadow: 2px 2px 15px #888888;}
 
 /*5列的样式*/
 .sheif-li-5col{width: 206px; height: 332px;}
