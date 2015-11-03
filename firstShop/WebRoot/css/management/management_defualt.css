@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+a{cursor: pointer;}
+
+.tool-bar{ background:#f0f0f0;height: 100%;width:213px;float: left;border-right: 1px solid rgb(198, 200, 204);position: fixed;}
+.tools{padding-top: 20px;}
+.tools ul{height: 30px;cursor: pointer;}
+.tools ul:hover{height: 30px;background:#eaeaea;border-top: 1px solid #e2e2e2;border-bottom: 1px solid #e2e2e2;cursor: pointer;}
+.tools .ul-active{height: 30px;background:#e0e0e0;border-top: 1px solid #f8f8f8;border-bottom: 1px solid #f8f8f8;}
+.tools .ul-active:hover{height: 30px;background:#e0e0e0;border-top: 1px solid #f8f8f8;border-bottom: 1px solid #f8f8f8;cursor: default;}
+
+.tools ul li{list-style-type: none;}
+.tools ul li a{line-height: 28px;color:#555555;font-size: 14px;}
+.tools ul li a:hover{text-decoration: none;}
+.tools .ul-active li a{font-weight:900;font-family:"黑体";}
+.tools .ul-active li a:hover{text-decoration: none;}

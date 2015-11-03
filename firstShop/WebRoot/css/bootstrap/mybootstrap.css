@@ -1,0 +1,179 @@
+@CHARSET "UTF-8";
+/*全局*/
+.table-hover td{cursor: pointer;}
+
+/*navbar red 红色*/
+.navbar-red {
+    background-color:#e74c3c;
+    color:#ff0000;
+    border-radius:0;
+}
+/*默认文字的颜色*/
+.navbar-red .navbar-nav > li > a {
+    color:#fff;
+}
+/*active 或hover 默认字的颜色*/
+.navbar-red .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fffff;
+    background-color:transparent;
+}
+/*brand默认字颜色*/
+.navbar-red .navbar-brand {color:#eeeeee;}
+/*选中的背景*/
+.navbar-red .container-fluid .collapse .navbar-nav .active{background-color:#c0392b;color:#fff000}
+
+/*a:hover的时候*/
+.navbar-red .container-fluid .collapse .navbar-nav li{}
+.navbar-red .container-fluid .collapse .navbar-nav li a:hover{background-color:#c0392b;}
+.navbar-red .navbar-nav .open .dropdown-menu{background-color:#e74c3c;}
+.navbar-red .navbar-nav .open .dropdown-menu > li:hover{}
+.navbar-red .navbar-nav .open .dropdown-menu > li > a {color: #fff;background-color:#e74c3c;}
+.navbar-red .navbar-nav .open .dropdown-menu > li > a:hover{color:#fff;background-color: #c0392b;}
+.navbar-red .container-fluid .collapse .dropdown .dropdown-menu li:hover{}
+.navbar-red .container-fluid .collapse .dropdown .dropdown-menu li a{}
+.navbar-red .container-fluid .collapse .dropdown .dropdown-menu li a:hover{background-color:#fff;color:#c0392b;}
+.navbar-red .navbar-toggle {border-color: #c0392b;}
+.navbar-red .navbar-toggle:hover, .navbar-toggle:focus {background-color: #c0392b;}
+.navbar-red .navbar-toggle .icon-bar {background-color:#ecf0f1;}
+
+/*nav - Green 绿色*/
+.navbar-green {
+    background-color:#2ecc71;
+    color:#ff0000;
+    border-radius:0;
+}
+/*默认文字的颜色*/
+.navbar-green .navbar-nav > li > a {
+    color:#fff;
+}
+/*active 或hover 默认字的颜色*/
+.navbar-green .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fffff;
+    background-color:transparent;
+}
+/*brand默认字颜色*/
+.navbar-green .navbar-brand {color:#eeeeee;}
+/*选中的背景*/
+.navbar-green .container-fluid .collapse .navbar-nav .active{background-color:#27ae60;color:#fff000;}
+
+/*a:hover的时候*/
+.navbar-green .container-fluid .collapse .navbar-nav li{}
+.navbar-green .container-fluid .collapse .navbar-nav li a:hover{background-color:#27ae60;}
+.navbar-green .navbar-nav .open .dropdown-menu{background-color:#2ecc71;}
+.navbar-green .navbar-nav .open .dropdown-menu > li:hover{}
+.navbar-green .navbar-nav .open .dropdown-menu > li > a {color: #fff;background-color:#2ecc71;}
+.navbar-green .navbar-nav .open .dropdown-menu > li > a:hover{color:#fff;background-color: #27ae60;}
+.navbar-green .container-fluid .collapse .dropdown .dropdown-menu li:hover{}
+.navbar-green .container-fluid .collapse .dropdown .dropdown-menu li a{}
+.navbar-green .container-fluid .collapse .dropdown .dropdown-menu li a:hover{background-color:#fff;color:#27ae60;}
+/*缩小时看见的按钮*/
+.navbar-green .navbar-toggle {border-color: #27ae60;}
+.navbar-green .navbar-toggle:hover, .navbar-toggle:focus {background-color: #27ae60;}
+.navbar-green .navbar-toggle .icon-bar {background-color:#ecf0f1;}
+
+/*nav - Purple 紫色*/
+.navbar-purple {
+    background-color:#9b59b6;
+    color:#ff0000;
+    border-radius:0;
+}
+/*默认文字的颜色*/
+.navbar-purple .navbar-nav > li > a {
+    color:#fff;
+}
+/*active 或hover 默认字的颜色*/
+.navbar-purple .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fffff;
+    background-color:transparent;
+}
+/*brand默认字颜色*/
+.navbar-purple .navbar-brand {color:#eeeeee;}
+/*选中的背景*/
+.navbar-purple .container-fluid .collapse .navbar-nav .active{background-color:#8e44ad;color:#fff000;}
+
+/*a:hover的时候*/
+.navbar-purple .container-fluid .collapse .navbar-nav li{}
+.navbar-purple .container-fluid .collapse .navbar-nav li a:hover{background-color:#8e44ad;}
+.navbar-purple .navbar-nav .open .dropdown-menu{background-color:#9b59b6;}
+.navbar-purple .navbar-nav .open .dropdown-menu > li:hover{}
+.navbar-purple .navbar-nav .open .dropdown-menu > li > a {color: #fff;background-color:#9b59b6;}
+.navbar-purple .navbar-nav .open .dropdown-menu > li > a:hover{color:#fff;background-color: #8e44ad;}
+.navbar-purple .container-fluid .collapse .dropdown .dropdown-menu li:hover{}
+.navbar-purple .container-fluid .collapse .dropdown .dropdown-menu li a{}
+.navbar-purple .container-fluid .collapse .dropdown .dropdown-menu li a:hover{background-color:#fff;color:#8e44ad;}
+/*缩小时看见的按钮*/
+.navbar-purple .navbar-toggle {border-color: #8e44ad;}
+.navbar-purple .navbar-toggle:hover, .navbar-toggle:focus {background-color: #8e44ad;}
+.navbar-purple .navbar-toggle .icon-bar {background-color:#ecf0f1;}
+
+
+/*nav - Organge 橙色*/
+.navbar-orange {
+    background-color:#e67e22;
+    color:#ff0000;
+    border-radius:0;
+}
+/*默认文字的颜色*/
+.navbar-orange .navbar-nav > li > a {
+    color:#fff;
+}
+/*active 或hover 默认字的颜色*/
+.navbar-orange .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fffff;
+    background-color:transparent;
+}
+/*brand默认字颜色*/
+.navbar-orange .navbar-brand {color:#eeeeee;}
+/*选中的背景*/
+.navbar-orange .container-fluid .collapse .navbar-nav .active{background-color:#d35400;color:#fff000;}
+
+/*a:hover的时候*/
+.navbar-orange .container-fluid .collapse .navbar-nav li{}
+.navbar-orange .container-fluid .collapse .navbar-nav li a:hover{background-color:#d35400;}
+.navbar-orange .navbar-nav .open .dropdown-menu{background-color:#e67e22;}
+.navbar-orange .navbar-nav .open .dropdown-menu > li:hover{}
+.navbar-orange .navbar-nav .open .dropdown-menu > li > a {color: #fff;background-color:#e67e22;}
+.navbar-orange .navbar-nav .open .dropdown-menu > li > a:hover{color:#fff;background-color: #d35400;}
+.navbar-orange .container-fluid .collapse .dropdown .dropdown-menu li:hover{}
+.navbar-orange .container-fluid .collapse .dropdown .dropdown-menu li a{}
+.navbar-orange .container-fluid .collapse .dropdown .dropdown-menu li a:hover{background-color:#fff;color:#d35400;}
+/*缩小时看见的按钮*/
+.navbar-orange .navbar-toggle {border-color: #d35400;}
+.navbar-orange .navbar-toggle:hover, .navbar-toggle:focus {background-color: #d35400;}
+.navbar-orange .navbar-toggle .icon-bar {background-color:#ecf0f1;}
+
+/*#046ad3  #21b5f1*/
+/*nav - blue 蓝色*/
+.navbar-blue {
+    background-color:#21b5f1;
+    color:#ff0000;
+    border-radius:0;
+}
+/*默认文字的颜色*/
+.navbar-blue .navbar-nav > li > a {
+    color:#fff;
+}
+/*active 或hover 默认字的颜色*/
+.navbar-blue .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fffff;
+    background-color:transparent;
+}
+/*brand默认字颜色*/
+.navbar-blue .navbar-brand {color:#eeeeee;}
+/*选中的背景*/
+.navbar-blue .container-fluid .collapse .navbar-nav .active{background-color:#046ad3;color:#fff000;}
+
+/*a:hover的时候*/
+.navbar-blue .container-fluid .collapse .navbar-nav li{}
+.navbar-blue .container-fluid .collapse .navbar-nav li a:hover{background-color:#046ad3;}
+.navbar-blue .navbar-nav .open .dropdown-menu{background-color:#21b5f1;}
+.navbar-blue .navbar-nav .open .dropdown-menu > li:hover{}
+.navbar-blue .navbar-nav .open .dropdown-menu > li > a {color: #fff;background-color:#21b5f1;}
+.navbar-blue .navbar-nav .open .dropdown-menu > li > a:hover{color:#fff;background-color: #046ad3;}
+.navbar-blue .container-fluid .collapse .dropdown .dropdown-menu li:hover{}
+.navbar-blue .container-fluid .collapse .dropdown .dropdown-menu li a{}
+.navbar-blue .container-fluid .collapse .dropdown .dropdown-menu li a:hover{background-color:#fff;color:#046ad3;}
+/*缩小时看见的按钮*/
+.navbar-blue .navbar-toggle {border-color: #046ad3;}
+.navbar-blue .navbar-toggle:hover, .navbar-toggle:focus {background-color: #046ad3;}
+.navbar-blue .navbar-toggle .icon-bar {background-color:#ecf0f1;}
