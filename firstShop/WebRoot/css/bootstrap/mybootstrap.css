@@ -177,3 +177,9 @@
 .navbar-blue .navbar-toggle {border-color: #046ad3;}
 .navbar-blue .navbar-toggle:hover, .navbar-toggle:focus {background-color: #046ad3;}
 .navbar-blue .navbar-toggle .icon-bar {background-color:#ecf0f1;}
+
+
+
+/*表格样式*/
+.table-header > thead > tr { background-color:#dddddd;border-top: 1px solid #5aa3d6;}
+

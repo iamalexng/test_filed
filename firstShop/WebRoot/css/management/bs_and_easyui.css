@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+/* easy ui  修改*/
+
+.panel,.datagrid{margin-top: 1px;}
+.panel,.datagrid,.datagrid-wrap,.panel-body,.panel-body-noheader{border: 0px solid red;padding-top: 0px;}
+/*表头*/
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td{background-color: #dddddd;border-top: 1px solid #5aa3d6; }
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td .datagrid-cell,.datagrid-cell-c1{color:rgb(51,​ 51,​ 51);}
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td .datagrid-cell span{font-size: 16px;font-family: "Microsoft YaHei" ! important;font-weight:800;}
+.datagrid-header-row{  height: 36px;}
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row .datagrid-header-over{background: #cccccc;}
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody tr td{border: 0px;}
+/*表体*/
+.datagrid-row {height: 33px;}
+.datagrid-body .datagrid-row-over{cursor: pointer;}
+.datagrid-body .datagrid-row-over {background: #f5f5f5;color: #000000;}
+.datagrid-body .datagrid-btable tbody tr td{border-left: 0px;border-right: 0px;border-bottom: 1px solid #dddddd;}
+.datagrid-body .datagrid-btable tbody tr .datagrid-row-checked,.datagrid-row-selected{color:#1395ed;background-color: #fefede;}
+.datagrid-body .datagrid-btable tbody tr .datagrid-cell{font-size: 14px;}
+/*分页器*/
+.datagrid-pager{}/*修改datagrid-pager pagination任意一个的高度就可以改变*/
+.pagination{}
+.pagination .pagination-page-list{display:none;}/*隐藏了每页显示多少条的*/
+.pagination table tr td .pagination-last{display:block;}
+.pagination .pagination-btn-separator {
+  float: left;
+  height: 40px;
+  border-left: 0px solid #ccc;
+  border-right: 0px solid #fff;
+  margin: 1px 1px;
+}
+.pagination .pagination-num {border-color: #cccccc;}
+
+.l-btn:hover {
+  background: #eaf2ff;
+  color: #000000;
+  border: 1px solid #cccccc;
+  filter: none;
+}

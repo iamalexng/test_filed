@@ -39,7 +39,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$(this).parent().parent().find("ul").removeClass("ul-active");
 	$(this).addClass("ul-active");
 	var url=$(this).find("li").attr("page");
+	if(url.indexOf("http://")==-1){
 	url="http://"+url;	
+	}
 	$("#iframe_page").attr("src",url); 
 	});
 	
@@ -127,17 +129,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="tools">
 			<div id="system">
 			<ul class="ul-active">
-				<li page="localhost:8080/firstShop/page/management/test_iframe.jsp">
+				<li page="<%=basePath%>/page/management/test_iframe1.jsp">
 				<a>系统功能项1</a>
 				</li>
 			</ul>
 			<ul>
-				<li page="www.taobao.com">
+				<li page="<%=basePath%>/page/management/test_iframe2.jsp">
 				<a>系统功能项2</a>
 				</li>
 			</ul>
 			<ul>
-				<li page="www.jd.com">
+				<li page="<%=basePath%>/page/management/test_iframe3.jsp">
 				<a>系统功能项3</a>
 				</li>
 			</ul>
@@ -152,14 +154,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 						<ul>
-				<li>
+				<li page="www.taobao.com">
 				<a>系统功能项6</a>
 				</li>
 			</ul>
 			</div>
 			<div id="customer">
 			<ul>
-				<li>
+				<li page="www.jd.com">
 				<a>会员功能项7</a>
 				</li>
 			</ul>
@@ -204,7 +206,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- Toolbar结束  -->
 <div>
 
-<iframe id='iframe_page' name="iframe_page" src="<%=basePath%>page/management/test_iframe.jsp" width="100%" height="650px" frameborder="0" scrolling="no" style="padding: 6px;padding-left:223px;padding-top:6px;padding-right:6px;"></iframe> 
+<iframe id='iframe_page' name="iframe_page" src="<%=basePath%>page/management/test_iframe1.jsp" width="100%" height="650px" frameborder="0" scrolling="no" style="padding: 6px;padding-left:223px;padding-top:6px;padding-right:6px;"></iframe> 
 
 <!-- 
 
