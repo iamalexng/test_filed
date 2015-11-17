@@ -9,7 +9,7 @@ package com.bs.fshop.po;
  * @author 吴圣(890160)
  * @createDate 创建时间：2015-9-28 上午9:42:04
  */
-public class SecUser extends AllParent{
+public class SecUser extends BasePo{
 	
 	
     /**
