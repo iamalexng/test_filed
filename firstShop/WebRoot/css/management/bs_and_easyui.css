@@ -1,6 +1,5 @@
 @CHARSET "UTF-8";
 /* easy ui  修改*/
-
 .panel,.datagrid{margin-top: 1px;}
 .panel,.datagrid,.datagrid-wrap,.panel-body,.panel-body-noheader{border: 0px solid red;padding-top: 0px;}
 /*表头*/
@@ -36,4 +35,24 @@
   color: #000000;
   border: 1px solid #cccccc;
   filter: none;
+}
+
+/*bootstrap相关*/
+.clover-bs-text-div{}
+.clover-bs-input-div{height:30px;width:200px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+
+@media (max-width: 768px) {
+.clover-bs-input-div{height:30px;width:180px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+}
+@media screen and (min-width:769px) and (max-width: 991px) {
+.clover-bs-input-div{height:30px;width:190px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+}
+@media screen and (min-width:992px) and (max-width: 1023px) {
+.clover-bs-input-div{height:30px;width:200px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+}
+@media screen and (min-width:1024px) and (max-width: 1200px) {
+.clover-bs-input-div{height:30px;width:220px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+}
+@media screen and (min-width:1201px) {
+.clover-bs-input-div{height:30px;width:250px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
 }

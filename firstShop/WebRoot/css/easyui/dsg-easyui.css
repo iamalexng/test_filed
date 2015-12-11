@@ -2867,3 +2867,5 @@
 .switchbutton-readonly {
   cursor: default;
 }
+
+.input-group .input-group-addon{background-color: #fff;}

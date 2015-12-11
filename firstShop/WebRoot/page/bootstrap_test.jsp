@@ -143,30 +143,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<a>系统功能项3</a>
 				</li>
 			</ul>
+			<ul>
+				<li page="<%=basePath%>/page/management/test_autoform1.jsp">
+				<a>系统功能项4</a>
+				</li>
+			</ul>
 				<ul>
 				<li page="www.163.com">
-				<a>系统功能项4</a>
+				<a>系统功能项5</a>
 				</li>
 			</ul>
 			<ul>
 				<li page="www.baidu.com">
-				<a>系统功能项5</a>
+				<a>系统功能项6</a>
 				</li>
 			</ul>
 						<ul>
 				<li page="www.taobao.com">
-				<a>系统功能项6</a>
+				<a>系统功能项7</a>
 				</li>
 			</ul>
 			</div>
 			<div id="customer">
 			<ul>
 				<li page="www.jd.com">
-				<a>会员功能项7</a>
-				</li>
-			</ul>
-						<ul>
-				<li>
 				<a>会员功能项8</a>
 				</li>
 			</ul>

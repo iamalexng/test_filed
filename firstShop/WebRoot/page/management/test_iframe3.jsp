@@ -15,6 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <jsp:include page="/page/public/fshop_include_system.jsp" flush="false" />
 	<script type="text/javascript" src="<%=basePath%>js/easyui/jquery.easyui.min.js"></script>
 	
+	<script type="text/javascript" src="<%=basePath%>js/clover.js"></script>
 	 
 	 <!--  -->
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/easyui/dsg-easyui.css">
@@ -29,6 +30,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 <script>
 		$(function(){
+	//	alert("test");
+		var fields = [
+		{title : "核定载负总重", id : "total_weight" ,rules : {required:true},type:"hidden"},
+		{title : "核定净重", id : "item_weight",rules : {required:true}}
+		];
+		
+		var c =  new Clover("lingceng", 22,"id1","");  
+		c.init(fields); 
+
 			$('#dg').datagrid({
 			//width:'100%',
 			//rownumbers:true,
@@ -39,10 +49,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        fitColumns:true,//注意,当fitCulumns=true时，将会自动适应全屏的宽度，但columns中的:field不能重复，否则会出现bug
 	        columns:[[
             {field:'productid',title:'第一列',width:20},/*当前是把宽度分为10份，每列占用2份,也就是按照百分比,如果设置fixed:true,该列则不会自适应大小，而是固定宽度;适用场景:比如人名，通常固定在2~3个中文字的的，就固定宽度比较美观*/
-            {field:'productname',title:'第二列',width:20,align:'center'},
+            {field:'productname',title:'第二列',width:20,align:'center'},//居中
             {field:'unitcost',title:'第三列',width:20},
             {field:'test1',title:'第四列',width:20},
-            {field:'test2',title:'第五列',width:20,align:'right'}
+            {field:'test2',title:'第五列',width:20,align:'right'}//居右
         	]]
         	,
         	toolbar: [{
@@ -79,9 +89,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     
 	  <nav class="navbar navbar-default">
-    
+	  
  <div class="navbar-form navbar-left" role="search" >
+  
      <div class="input-group">
+     <div class="input-group-addon"></div>
       <input type="text" class="form-control" placeholder="Search for...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
