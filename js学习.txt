@@ -1,0 +1,30 @@
+ajax内容
+//令牌绑定
+$.ajaxPrefilter=预处理ajax回调函数
+    $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+		if(originalOptions && originalOptions.type && originalOptions.type.toUpperCase()=="POST"){
+			options.data = $.param($.extend(originalOptions.data, { "_token": window._token || formToken}));
+		}
+	});
+---------------------------------
+
+
+//token覆盖
+.ajaxSend是全局ajax事件函数，当ajax请求即将被发送时，触发ajaxSend事件
+$(document).ajaxSend(function(event,xhr,options){
+	 _token = "-1";
+});
+
+ajaxSuccess()函数用于设置当AJAX请求成功完成时执行的回调函数
+这是一个全局AJAX事件函数，用于为任何AJAX请求的ajaxSuccess事件绑定事件处理函数。当AJAX请求成功完成时(不包括失败的情况，例如：找不到页面、服务器内部错误等)，将触发ajaxSuccess事件，并执行绑定的事件处理函数。
+$(document).ajaxSuccess(function(event,xhr,options){
+	 var curToken = xhr.getResponseHeader("_token");
+	 _token = curToken;
+});
+
+ajaxError()函数用于设置当AJAX请求失败时执行的回调函数
+这是一个全局AJAX事件函数，用于为任何AJAX请求的ajaxError事件绑定事件处理函数。当AJAX请求失败时(例如：找不到页面、服务器内部错误、数据解析失败等)，将触发ajaxError事件，并执行绑定的事件处理函数。
+$(document).ajaxError(function(event,xhr,options,exc){
+	 var curToken = xhr.getResponseHeader("_token");
+	 _token = curToken;
+});
