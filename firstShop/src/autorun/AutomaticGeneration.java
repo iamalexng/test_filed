@@ -38,7 +38,6 @@ public class AutomaticGeneration {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		
 	}
-
+	
 }

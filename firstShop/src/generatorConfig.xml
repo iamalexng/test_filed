@@ -16,7 +16,7 @@
         userId="root"
         password="123456">
     </jdbcConnection>
-
+	
     <javaTypeResolver >
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
@@ -38,7 +38,7 @@
     </javaClientGenerator>
     
     <table tableName="sec_user"></table>
-
+	
 	<!-- 
     <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
       <property name="useActualColumnNames" value="true"/>

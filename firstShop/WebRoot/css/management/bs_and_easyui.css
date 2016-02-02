@@ -38,21 +38,57 @@
 }
 
 /*bootstrap相关*/
+.font-weight-normal{font-weight:400;}/*普通字体，不加粗*/
+.margin-top-bottom{margin-top:3px;margin-bottom:3px;}
+.float-right{float:right;}
+.float-left{float:left;}
+.autoform-title{text-align: right;}
 .clover-bs-text-div{}
-.clover-bs-input-div{height:30px;width:200px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:180px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{}
+.clover-bs-datetimepick-input{
+  display: block;
+  height: 28px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border:1px solid #cccccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.input-group.date .input-group-addon span {
+	cursor: pointer;
+	width:  0px;
+	height: 0px;
+}
 
 @media (max-width: 768px) {
-.clover-bs-input-div{height:30px;width:180px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:170px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{width:560px;}
+.clover-bs-datetimepick-input{width:131px;}
 }
 @media screen and (min-width:769px) and (max-width: 991px) {
-.clover-bs-input-div{height:30px;width:190px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:170px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{width:580px;}
+.clover-bs-datetimepick-input{width:131px;}
 }
 @media screen and (min-width:992px) and (max-width: 1023px) {
-.clover-bs-input-div{height:30px;width:200px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:175px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{width:580px;}
+.clover-bs-datetimepick-input{width:136px;}
 }
 @media screen and (min-width:1024px) and (max-width: 1200px) {
-.clover-bs-input-div{height:30px;width:220px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:180px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{width:580px;}
+.clover-bs-datetimepick-input{width:141px;}
 }
 @media screen and (min-width:1201px) {
-.clover-bs-input-div{height:30px;width:250px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-div{height:30px;width:200px;display: inline-block;margin-bottom: 0;vertical-align: middle;}
+.clover-bs-input-textarea{width: 660px;}
+.clover-bs-datetimepick-input{width:161px;}
 }
