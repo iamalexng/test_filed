@@ -31,44 +31,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script>
 		$(function(){
 	//	alert("test");
-		var fields = [
-		{title : "核定载负总重", id : "total_weight" ,rules : {required:true},type:"hidden"},
-		{title : "核定净重", id : "item_weight",rules : {required:true}}
-		];
+		var fields = [{
+		 rownumbers:true,//是否要行编号
+		 singleSelect:false,//是否行单选
+		 pageSize:10,//暂时不需要输入，默认给了10，输入的话会修改默认值
+		 GridLines:"Horizontal",//网格线，不需要，默认会给
+		 url:'<%=basePath%>page/management/datagrid_data1.json',
+		 fitColumns:true,//该值默认为true,修改会覆盖默认值的
+		 toolbar:false,//默认给false,不提供修改默认值
+		 pagination: true,
+		 pagePosition:'both'//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
+		 //columns:columns
+		 }];
 		
-		var c =  new Clover("lingceng", 22,"id1","");  
-		c.init(fields); 
-
-			$('#dg').datagrid({
-			//width:'100%',
-			//rownumbers:true,
-			singleSelect:true,
-			pageSize:10,
-			GridLines:"Horizontal",
-	        url:'<%=basePath%>page/management/datagrid_data1.json',
-	        fitColumns:true,//注意,当fitCulumns=true时，将会自动适应全屏的宽度，但columns中的:field不能重复，否则会出现bug
-	        columns:[[
-            {field:'productid',title:'第一列',width:20},/*当前是把宽度分为10份，每列占用2份,也就是按照百分比,如果设置fixed:true,该列则不会自适应大小，而是固定宽度;适用场景:比如人名，通常固定在2~3个中文字的的，就固定宽度比较美观*/
+		var columns=[[
+            {field:'productid',title:'第一1列',width:20},/*当前是把宽度分为10份，每列占用2份,也就是按照百分比,如果设置fixed:true,该列则不会自适应大小，而是固定宽度;适用场景:比如人名，通常固定在2~3个中文字的的，就固定宽度比较美观*/
             {field:'productname',title:'第二列',width:20,align:'center'},//居中
             {field:'unitcost',title:'第三列',width:20},
             {field:'test1',title:'第四列',width:20},
             {field:'test2',title:'第五列',width:20,align:'right'}//居右
-        	]]
-        	,
-        	toolbar: [{
-						iconCls: 'icon-edit',
-						handler: function(){alert('edit');}
-					},'-',{
-						iconCls: 'icon-help',
-						handler: function(){alert('help');}
-					}]
-			,
+        	]];
+		
+		var c =  new Clover("lingceng", 22,"id1","");  
+		c.init(fields); 
+	//	c.datagrid("dg",fields,columns);
+		
+			$('#dg').datagrid({
+			//width:'100%',
+			rownumbers:true,
+			singleSelect:false,
+			pageSize:10,
+			GridLines:"Horizontal",
+	        url:'<%=basePath%>page/management/datagrid_data1.json',
+	        fitColumns:true,//注意,当fitCulumns=true时，将会自动适应全屏的宽度，但columns中的:field不能重复，否则会出现bug
 			toolbar:false,//请自定义toolbar
 			pagination: true,
 			pagePosition:'bottom',//'top'、'bottom'、'both'
 			onDblClickRow:function(rowIndex, rowData){
 			alert(rowIndex+","+rowData.productname);
-			}
+			},
+			columns:columns
+        	
     });
     
      $('#dg').datagrid('getPager').pagination({
@@ -79,9 +82,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
      //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
-    $(window).resize(function() {
-	    $("#dg").datagrid('resize');
-	});
 		});
 	</script>
   </head>

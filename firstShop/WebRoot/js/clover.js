@@ -1,3 +1,4 @@
+
 function Clover(name,age,id,fields)  
 {
     // 实例属性  
@@ -6,6 +7,8 @@ function Clover(name,age,id,fields)
     this.age=age;  
     this.id=id;
     this.fields=fields;
+    
+ 
 }  
           
 Clover.prototype={  
@@ -23,6 +26,10 @@ Clover.prototype={
     	if(this.fields==null||this.fields==""){
     		this.fields=fields;
     	}
+    	
+    	$(window).resize(function() {
+	   	    $("#dg").datagrid('resize');
+	   	});
     },
     autoForm:function(id,fields){
     	//优先使用类的参数，当类参数为空时，使用方法中的参数
@@ -41,7 +48,7 @@ Clover.prototype={
     	var arr = new Array();
     	var fieldsTitle="",fieldsId="",fieldsVal="",//标题，id,内容
     		fieldsDisabled="",fieldsReadonly="",//是否禁用,是否只读
-    		fieldsType="",fieldsFormatter="";//类型,格式
+    		fieldsType="",fieldsFormatter="",fieldsMinView;//类型,格式,//最小视图
     	var inputBox="";
     	var calendarList="";
     	for(var i=0;i<this.fields.length;i++){
@@ -52,6 +59,7 @@ Clover.prototype={
     			if(key=="title"){fieldsTitle=value;}
     			if(key=="id"){fieldsId=value;}
     			if(key=="type"){fieldsType=value;}
+    			if(key=="format"){fieldsFormatter=value;}
             });
     		//文本框的情况
     		if(fieldsType=="input" || fieldsType=="text"){
@@ -117,7 +125,17 @@ Clover.prototype={
 					calendarList=calendarList+fieldsId;
 				}else{
 				calendarList=calendarList+","+fieldsId;
-				}  
+				} 
+				if(fieldsFormatter==""){
+					fieldsFormatter=fieldsFormatter+fieldsFormatter;
+				}else{
+					fieldsFormatter=fieldsFormatter+","+fieldsFormatter;
+				}
+				if(fieldsMinView==""){
+					fieldsMinView=fieldsMinView+fieldsMinView;
+				}else{
+					fieldsMinView=fieldsMinView+","+fieldsMinView;
+				}
 			}
 			
     		fieldsReadonly=false;
@@ -128,7 +146,15 @@ Clover.prototype={
     	//开始处理日期选择器
     	if(calendarList!=""){
     		var Cal=calendarList.split(",");
+    		var formatter="";
+    		if(fieldsFormatter!=""){
+    		formatter=fieldsFormatter.split(",");
+    		}
     		for(var j=0;j<Cal.length;j++){
+    			var formatValue='yyyy-mm-dd';
+    			if(fieldsFormatter!="" && formatter[j]!=""){
+    				formatValue=formatter[j];
+    			}
     			$('#'+Cal[j]).datetimepicker({
     		         language: 'zh-CN',
     		         weekStart: 1,
@@ -137,7 +163,7 @@ Clover.prototype={
     				 todayHighlight: 1,
     				 forceParse: 0,
     				 startView: 2,
-    				 format: 'yyyy-mm-dd hh:ii',
+    				 format: formatValue,//'yyyy-mm-dd hh:ii',
     				 minView: 2
     				    });
     		}
@@ -147,5 +173,69 @@ Clover.prototype={
     	 
     	 
     	$("#"+id).append("</div>");
+    },
+    datagrid:function(id,fields){
+    	   
+    	   if(this.id==null||this.id==""){
+       		this.id=id;
+       	}
+       	if(this.fields==null||this.fields==""){
+       		this.fields=fields;
+       	}
+       	var fieldsRowNumbers="false",//---是否要行编号,默认否---可覆盖
+       		fieldsSingleSelect="false",//是否有行编号,是否单选----可覆盖
+       		fieldsPageSize="10",//每页数据条数，默认为10---可覆盖
+       		fieldsGridLines="Horizontal",//每页显示条数，网格
+       		fieldsUrl="",//url
+       		fieldsPosition="false",//是否要分页器,默认不要---可覆盖
+       		fieldsPagePosition="bottom",//分页器所在的位置,默认底部---可覆盖，使用both,top,bottom
+       		fieldsPositionLanguage="en";//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW
+       		fieldsColumns="";//行数据,必须不为空
+			 
+       	for(var i=0;i<this.fields.length;i++){
+       		
+    		$.each(fields[i],function(key,value) {
+    			if(key=="rownumbers"){fieldsRowNumbers=value;}
+    			if(key=="singleSelect"){fieldsSingleSelect=value;}
+    			if(key=="pageSize"){fieldsPageSize=value;}
+    			//if(key=="GridLines"){fieldsGridLines=value;}//该暂不提供修改
+    			if(key=="url"){fieldsUrl=value;}
+    			if(key=="pagination"){fieldsPosition=value;}
+    			if(key=="pagePosition"){fieldsPagePosition=value;}
+    			if(key=="positionLanguage"){fieldsPositionLanguage=value;}
+    			if(key=="columns"){fieldsColumns=value;}
+    		});
+    		if(fieldsColumns==""){console.log("错误!你的columns为空!");return false;}
+    		$("#"+id).datagrid({
+    			rownumbers:fieldsRowNumbers,
+    			singleSelect:fieldsSingleSelect,
+    			pageSize:fieldsPageSize,
+    			GridLines:"Horizontal",
+    			url:fieldsUrl,
+    			fitColumns:true,
+    			toolbar:false,
+    			pagination: fieldsPosition,
+    			pagePosition:fieldsPagePosition,//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
+    			columns:fieldsColumns
+    		});
+    		
+    		
+    		if(fieldsPosition==true){
+    			if(fieldsPositionLanguage=="zh-CN"){
+    				  $('#'+id).datagrid('getPager').pagination({
+    		    	        beforePageText: '第',//页数文本框前显示的汉字 
+    		    	        afterPageText: '页    共 {pages} 页',
+    		    	        displayMsg: '共{total}条数据',
+    		    	    });
+    			}else if(fieldsPositionLanguage=="zh-TW"){
+    				 $('#'+id).datagrid('getPager').pagination({
+ 		    	        beforePageText: '第',//页数文本框前显示的汉字 
+ 		    	        afterPageText: '頁    共 {pages} 頁',
+ 		    	        displayMsg: '共{total}條數據',
+ 		    	    });
+    			}
+    		}
+       	}
+       	
     }
 };
