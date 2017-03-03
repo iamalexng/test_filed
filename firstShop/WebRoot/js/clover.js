@@ -27,9 +27,6 @@ Clover.prototype={
     		this.fields=fields;
     	}
     	
-    	$(window).resize(function() {
-	   	    $("#dg").datagrid('resize');
-	   	});
     },
     autoForm:function(id,fields){
     	//优先使用类的参数，当类参数为空时，使用方法中的参数
@@ -233,9 +230,19 @@ Clover.prototype={
  		    	        afterPageText: '頁    共 {pages} 頁',
  		    	        displayMsg: '共{total}條數據',
  		    	    });
+    			}else if(fieldsPositionLanguage=="ja"){
+   				 $('#'+id).datagrid('getPager').pagination({
+		    	        beforePageText: '第',//页数文本框前显示的汉字 
+		    	        afterPageText: 'ページ    共 {pages} ページ',
+		    	        displayMsg: '共有{total}データ',
+		    	    });
     			}
     		}
        	}
+       	
+       	$(window).resize(function() {
+	   	    $("#"+id).datagrid('resize');
+	   	});
        	
     }
 };

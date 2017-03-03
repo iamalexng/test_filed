@@ -3,11 +3,11 @@
 .panel,.datagrid{margin-top: 1px;}
 .panel,.datagrid,.datagrid-wrap,.panel-body,.panel-body-noheader{border: 0px solid red;padding-top: 0px;}
 /*表头*/
-.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td{background-color: #dddddd;border-top: 1px solid #5aa3d6; }
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td{background-color: #e6e6e6;border-top: 1px solid #5aa3d6; }
 .datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td .datagrid-cell,.datagrid-cell-c1{color:rgb(51,​ 51,​ 51);}
 .datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row td .datagrid-cell span{font-size: 16px;font-family: "Microsoft YaHei" ! important;font-weight:800;}
 .datagrid-header-row{  height: 36px;}
-.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row .datagrid-header-over{background: #cccccc;}
+.datagrid-header .datagrid-header-inner .datagrid-htable tbody .datagrid-header-row .datagrid-header-over{background: #d7d7d7;}
 .datagrid-header .datagrid-header-inner .datagrid-htable tbody tr td{border: 0px;}
 /*表体*/
 .datagrid-row {height: 33px;}

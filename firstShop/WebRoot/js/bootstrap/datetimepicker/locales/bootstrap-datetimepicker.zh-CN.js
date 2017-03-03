@@ -12,6 +12,7 @@
 			today: "今日",
 			suffix: [],
 			meridiem: ["上午", "下午"],
+			
 			format: "yyyy-mm-dd" /*控制显示格式*/
 	};
 }(jQuery));

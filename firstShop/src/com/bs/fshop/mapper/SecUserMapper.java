@@ -1,5 +1,6 @@
 package com.bs.fshop.mapper;
 
+import com.bs.fshop.annotation.ChangeRecord;
 import com.bs.fshop.po.SecUser;
 import com.bs.fshop.po.SecUserExample;
 import java.util.List;
@@ -26,14 +27,17 @@ public interface SecUserMapper {
     int insertSelective(SecUser record);
 
     List<SecUser> selectByExample(SecUserExample example);
-
+    
+    @ChangeRecord
     SecUser selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") SecUser record, @Param("example") SecUserExample example);
 
     int updateByExample(@Param("record") SecUser record, @Param("example") SecUserExample example);
-
+    
+    @ChangeRecord
     int updateByPrimaryKeySelective(SecUser record);
-
+    
+    @ChangeRecord
     int updateByPrimaryKey(SecUser record);
 }

@@ -121,7 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</a>
 					</li>
 					<li class="nav-item" id="nav_item6">
-						<a class="link" href="javascript:void(0);">
+						<a class="link" href="<%=basePath%>page/contactus.jsp"  style="cursor: pointer;">
 						<span class="text">联系我们</span>
 						<span class="arrow"></span>
 						</a>

@@ -25,6 +25,7 @@ public class SecUserServiceImpl implements SecUserService {
 	
 	
 	public SecUser selectByPrimaryKey(Integer id) {
+		System.out.println("这是即将调用mapper");
 		SecUser secUser=secUserMapper.selectByPrimaryKey(id);
 		//secUser.setName("sssss");
 		return secUser;

@@ -70,8 +70,9 @@ public class TestController {
 	}
 	
 	@RequestMapping("/queryUserAndReturnBean")
-	public @ResponseBody SecUser queryUserAndReturnBean (Integer userId) throws Exception{
-		System.out.println("####"+userId);
+	public SecUser queryUserAndReturnBean (Integer userId) throws Exception{
+		System.out.println("######userid=="+userId);
+		userId=2;
 		//SecUser secUser1=new SecUser();//secUserService.selectByPrimaryKey(1);
 		SecUser secUser1=secUserService.selectByPrimaryKey(userId);
 		//secUser1.setName("dou");
@@ -84,20 +85,20 @@ public class TestController {
 	
 	@RequestMapping("/queryUserAndReturnMap")
 	public @ResponseBody Map<String,Object> queryUserAndReturnMap (Integer userId) throws Exception{
-		System.out.println("####"+userId);
-		//SecUser secUser1=secUserService.selectByPrimaryKey(userId);
+		System.out.println("####userid=="+userId);
+		userId=2;
+		SecUser secUser2=secUserService.selectByPrimaryKey(userId);
+		
+		System.out.println("nickName=="+secUser2.getNickName());
 		SecUser secUser1=new SecUser();
 		String ua = request.getHeader("User-Agent");
 		System.out.println("#########User-Agent=="+ua);
 		UserAgent userAgent=UserAgent.parseUserAgentString(ua);
 		Browser browser = userAgent.getBrowser();  
 	    OperatingSystem os = userAgent.getOperatingSystem();
-	    
 	    System.out.println("browser="+browser+",,OperatingSystem="+os);
-	    
-		
 		secUser1.setNickName("不查询数据库的测试人员");
-		System.out.println(secUser1.getName());
+		System.out.println("user2.getName=="+secUser2.getName());
 		Map<String,Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("secUser", secUser1);
 		resultMap.put("msg", "success");

@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	//	alert("test");
 	
 	var columns=[[
-            {field:'productid',title:'第一列',width:20},/*当前是把宽度分为10份，每列占用2份,也就是按照百分比,如果设置fixed:true,该列则不会自适应大小，而是固定宽度;适用场景:比如人名，通常固定在2~3个中文字的的，就固定宽度比较美观*/
+            {field:'productid',title:'第一列',width:20},
             {field:'productname',title:'第二2列',width:20,align:'center'},//居中
             {field:'unitcost',title:'第三列',width:20},
             {field:'test1',title:'第四列',width:20},
@@ -41,28 +41,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	]];
         	
 		var fields = [{
-		 rownumbers:true,//是否要行编号
-		 singleSelect:false,//是否行单选
-		 pageSize:10,//暂时不需要输入，默认给了10，输入的话会修改默认值
-		 GridLines:"Horizontal",//网格线，不需要，默认会给
+		 rownumbers:true,//---是否要行编号,默认否---可覆盖
+		 singleSelect:false,//是否有行编号,是否单选----可覆盖
+		 pageSize:10,//每页数据条数，默认为10---可覆盖
 		 url:'<%=basePath%>page/management/datagrid_data1.json',
-		 fitColumns:true,//该值默认为true,修改会覆盖默认值的
 		 toolbar:false,//默认给false,不提供修改默认值
-		 pagination: true,
-		 pagePosition:'top',//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
-		 positionLanguage : 'zh-TW',
+		 pagination: true,//是否要分页器,默认不要---可覆盖
+		 pagePosition:'bottom',//分页器所在的位置,默认底部---可覆盖，使用both,top,bottom
+		 positionLanguage : 'zh-TW',//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW,ja(日文仅供玩耍，直接google翻译)
 		 columns:columns
 		 }];
 		
-		
-		
 		var c =  new Clover("lingceng", 22,"id1","");  
-		c.init(fields); 
 		c.datagrid("dg",fields);
 		
     
     
-    
+    	$('#dg').datagrid({
+			onDblClickRow: function(index,row){
+				alert(index+","+row.itemid+",");
+				
+			}
+		});
+
      //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
 		});
 	</script>
@@ -109,9 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </nav>
 
 	
-	<table id="dg" style="width:auto" >
-	
-	</table>
+	<table id="dg" style="width:auto" ></table>
 
     
   </body>

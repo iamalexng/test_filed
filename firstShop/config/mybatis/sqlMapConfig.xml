@@ -21,5 +21,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  -->
  <!-- 
  <mapp
-  -->
+ -->
+  <plugins>
+  	<plugin interceptor="com.bs.fshop.interceptor.DaoInterceptor" />
+  </plugins>
+   
 </configuration>
