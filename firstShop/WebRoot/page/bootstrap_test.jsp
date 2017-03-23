@@ -181,7 +181,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 						<ul>
-				<li>
+				<li page="<%=basePath%>/page/management/test_iframe2_test.jsp">
 				<a>会员功能项11</a>
 				</li>
 			</ul>

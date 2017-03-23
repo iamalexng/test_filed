@@ -32,15 +32,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(function(){
 	//	alert("test");
 		var fields = [{
-		 rownumbers:true,//是否要行编号
+		 rownumbers:false,//是否要行编号
 		 singleSelect:false,//是否行单选
 		 pageSize:10,//暂时不需要输入，默认给了10，输入的话会修改默认值
 		 GridLines:"Horizontal",//网格线，不需要，默认会给
 		 url:'<%=basePath%>page/management/datagrid_data1.json',
 		 fitColumns:true,//该值默认为true,修改会覆盖默认值的
+		 striped:false,//斑马线，默认为false,可修改默认值
 		 toolbar:false,//默认给false,不提供修改默认值
+		 showHeader:true,
 		 pagination: true,
-		 pagePosition:'both'//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
+		 positionLanguage:'zh-CN',//提供了四种语言的分页器,默认为en,可修改覆盖默认值'zh-CN','zh-TW','ja',
+		 pagePosition:'bottom'//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
+		 
 		 //columns:columns
 		 }];
 		
@@ -53,11 +57,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	]];
 		
 		var c =  new Clover("lingceng", 22,"id1","");  
-		c.init(fields); 
-	//	c.datagrid("dg",fields,columns);
-		
+	//	c.init(fields); 
+		c.datagrid("dg",fields,columns);
+		/*
 			$('#dg').datagrid({
-			//width:'100%',
 			rownumbers:true,
 			singleSelect:false,
 			pageSize:10,
@@ -79,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         afterPageText: '页    共 {pages} 页',
         displayMsg: '共{total}条数据',
     }); 
-    
+    */
     
      //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
 		});

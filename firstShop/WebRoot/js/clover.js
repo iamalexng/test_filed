@@ -171,7 +171,7 @@ Clover.prototype={
     	 
     	$("#"+id).append("</div>");
     },
-    datagrid:function(id,fields){
+    datagrid:function(id,fields,columns){
     	   
     	   if(this.id==null||this.id==""){
        		this.id=id;
@@ -183,11 +183,14 @@ Clover.prototype={
        		fieldsSingleSelect="false",//是否有行编号,是否单选----可覆盖
        		fieldsPageSize="10",//每页数据条数，默认为10---可覆盖
        		fieldsGridLines="Horizontal",//每页显示条数，网格
+       		fieldsStriped="false",//是否显示斑马线,默认为false,可覆盖为true
        		fieldsUrl="",//url
        		fieldsPosition="false",//是否要分页器,默认不要---可覆盖
        		fieldsPagePosition="bottom",//分页器所在的位置,默认底部---可覆盖，使用both,top,bottom
-       		fieldsPositionLanguage="en";//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW
-       		fieldsColumns="";//行数据,必须不为空
+       		fieldsPositionLanguage="en",//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW
+       		fieldsShowHeader="true",//是否显示表头，默认为true,可以覆盖为--false
+       		
+       		fieldsColumns=columns;//行数据,必须不为空
 			 
        	for(var i=0;i<this.fields.length;i++){
        		
@@ -196,10 +199,12 @@ Clover.prototype={
     			if(key=="singleSelect"){fieldsSingleSelect=value;}
     			if(key=="pageSize"){fieldsPageSize=value;}
     			//if(key=="GridLines"){fieldsGridLines=value;}//该暂不提供修改
+    			if(key=="striped"){fieldsStriped=value;}
     			if(key=="url"){fieldsUrl=value;}
     			if(key=="pagination"){fieldsPosition=value;}
     			if(key=="pagePosition"){fieldsPagePosition=value;}
     			if(key=="positionLanguage"){fieldsPositionLanguage=value;}
+    			if(key=="showHeader"){fieldsShowHeader=value;}
     			if(key=="columns"){fieldsColumns=value;}
     		});
     		if(fieldsColumns==""){console.log("错误!你的columns为空!");return false;}
@@ -207,12 +212,14 @@ Clover.prototype={
     			rownumbers:fieldsRowNumbers,
     			singleSelect:fieldsSingleSelect,
     			pageSize:fieldsPageSize,
-    			GridLines:"Horizontal",
+    			GridLines:"Horizontal",//Horizontal,
     			url:fieldsUrl,
     			fitColumns:true,
+    			striped:fieldsStriped,
     			toolbar:false,
     			pagination: fieldsPosition,
     			pagePosition:fieldsPagePosition,//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
+    			showHeader:fieldsShowHeader,
     			columns:fieldsColumns
     		});
     		
