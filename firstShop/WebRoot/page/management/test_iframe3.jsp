@@ -59,6 +59,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		var c =  new Clover("lingceng", 22,"id1","");  
 	//	c.init(fields); 
 		c.datagrid("dg",fields,columns);
+		/* //测试另外调用的方法
+		$("#dg").datagrid({
+		onDblClickRow:function(rowIndex, rowData){
+		alert("new--"+rowIndex+","+rowData.productname);
+		}
+		});
+		
 		/*
 			$('#dg').datagrid({
 			rownumbers:true,
