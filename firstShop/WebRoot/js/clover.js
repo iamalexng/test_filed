@@ -187,7 +187,7 @@ Clover.prototype={
        		fieldsUrl="",//url
        		fieldsPosition="false",//是否要分页器,默认不要---可覆盖
        		fieldsPagePosition="bottom",//分页器所在的位置,默认底部---可覆盖，使用both,top,bottom
-       		fieldsPositionLanguage="en",//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW
+       		fieldsPositionLanguage="en",//分页器语言,默认为en---可覆盖为 zh-CN,zh-TW,ja; (英文、简体、繁体、日文)
        		fieldsShowHeader="true",//是否显示表头，默认为true,可以覆盖为---false
        		fieldsColumns=columns;//行数据,必须不为空
 			 
@@ -250,5 +250,19 @@ Clover.prototype={
 	   	    $("#"+id).datagrid('resize');
 	   	});
        	
+    },
+    treegrid:function(id,fields,columns){
+ 	   if(this.id==null||this.id==""){
+      		this.id=id;
+      	}
+      	if(this.fields==null||this.fields==""){
+      		this.fields=fields;
+      	}
+      	var sexIcon="",projectIcon="";
+    	for(var i=0;i<this.fields.length;i++){
+    		$.each(fields[i],function(key,value) {
+    			if(key=="icons"){sexIcon=value;}
+    		});
+    		}
     }
 };

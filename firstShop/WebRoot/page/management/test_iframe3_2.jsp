@@ -29,7 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<!-- 下面这是修正按钮阴影的样式，不适用则减少渐变 -->
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/bootstrap/bootstrap-theme.css" media="all" />
-
+<style type="text/css">
+noBg{background:url('themes/gray/images/tree_icons33.png');}
+/**
+#_easyui_tree_1 .tree-folder{background:url('themes/gray/images/tree_icons33.png');}
+#_easyui_tree_1 .tree-folder-open{background: url('themes/gray/images/tree_icons33.png');}
+*/
+</style>
 	
 <script>
 
@@ -40,6 +46,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     treeField:'name',
     fitColumns:true,//该值默认为true,修改会覆盖默认值的
     singleSelect:false,//是否行单选
+   // animate:true,//是否缓慢的变化树表
+    treegrid:true,
+    pagination: true,
+	pagePosition:'bottom',//'top'、'bottom'、'both'
     columns:[[
     	{field:'ck',width:10,checkbox:'true'}, 
 		{title:'Task Name',field:'name',width:180},
@@ -76,35 +86,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		var c =  new Clover("lingceng", 22,"id1","");  
 		c.init(fields); 
-	//	c.datagrid("dg",fields,columns);
-		
-			$('#dg').datagrid({
-			//width:'100%',
-			rownumbers:true,
-			singleSelect:false,
-			pageSize:10,
-			GridLines:"Horizontal",
-	        url:'<%=basePath%>page/management/datagrid_data1.json',
-	        fitColumns:true,//注意,当fitCulumns=true时，将会自动适应全屏的宽度，但columns中的:field不能重复，否则会出现bug
-			toolbar:false,//请自定义toolbar
-			pagination: true,
-			pagePosition:'bottom',//'top'、'bottom'、'both'
-			onDblClickRow:function(rowIndex, rowData){
-			alert(rowIndex+","+rowData.productname);
-			},
-			columns:columns
-        	
-    });
-    
-     $('#dg').datagrid('getPager').pagination({
-        beforePageText: '第',//页数文本框前显示的汉字 
-        afterPageText: '页    共 {pages} 页',
-        displayMsg: '共{total}条数据',
-    }); 
-    
-    
-     //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
+		$('#dg').tree({    
+			    url:'<%=basePath%>page/management/tree_data.json'   ,
+			    onLoadSuccess:function(data){
+			    
+			    },
+			    onContextMenu: function(e, node){
+		e.preventDefault();
+		// 查找节点
+		$('#dg').tree('select', node.target);
+		// 显示快捷菜单
+		$('#mm').menu('show', {
+			left: e.pageX,
+			top: e.pageY
 		});
+	}
+			    
+		});  
+	//	c.datagrid("dg",fields,columns);
+    
+  	
+     //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
+     initBtn();
+     
+		});
+		
+		function initBtn(){
+		
+		$("#btn_default").click(function(){
+		//tree-icon
+		$("#dg .tree-folder").css("background","url(css/easyui/themes/new_images/organization_open.png)");
+		
+		$("#dg2_div .tree-folder").css("background","url(css/easyui/themes/new_images/organization_open.png) no-repeat");
+		
+		$("#dg .tree-file").css("background","url(css/easyui/themes/new_images/lady.png) no-repeat");
+		});
+		
+		}
+		
+		function clickBtn(){
+		$("#btn_default").click();
+		}
 	</script>
   </head>
   
@@ -126,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="text" class="form-control" placeholder="全局搜索">
   </div>
   <!-- Standard button -->
-<button type="button" class="btn btn-default">（默认）Default</button>
+<button type="button" class="btn btn-default" id="btn_default">（默认）Default</button>
 
 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 <button type="button" class="btn btn-primary">（首选）Primary</button>
@@ -138,7 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <button type="button" class="btn btn-info">（一般信息）Info</button>
 
 <!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">（警告）Warning</button>
+<button type="button" class="btn btn-warning" id="">（警告）Warning</button>
 
 <!-- Indicates a dangerous or potentially negative action -->
 <button type="button" class="btn btn-danger">（危险）Danger</button>
@@ -153,7 +175,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	</table>
 	
+	
+	
+	<div id="dg2_div">
 	<table id="dg2" style="width:auto"></table>
-    
+    </div>
   </body>
 </html>

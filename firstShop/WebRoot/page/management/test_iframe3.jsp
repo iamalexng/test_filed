@@ -40,7 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		 fitColumns:true,//该值默认为true,修改会覆盖默认值的
 		 striped:false,//斑马线，默认为false,可修改默认值
 		 toolbar:false,//默认给false,不提供修改默认值
-		 showHeader:true,
+		 showHeader:true,//是否显示表头，默认true,可修改false
+		 idField:"",//唯一标示的id,默认null
 		 pagination: true,
 		 positionLanguage:'zh-CN',//提供了四种语言的分页器,默认为en,可修改覆盖默认值'zh-CN','zh-TW','ja',
 		 pagePosition:'bottom'//默认为底部bottom,可修改覆盖默认值'top'、'bottom'、'both'
@@ -91,6 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     }); 
     */
     
+   
      //$(".datagrid-header-inner .datagrid-htable").addClass("table table-hover");
 		});
 	</script>

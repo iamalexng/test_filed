@@ -2593,10 +2593,16 @@
   background: url('themes/gray/images/tree_icons.png') no-repeat -160px 0;
 }
 .tree-folder {
-  background: url('themes/gray/images/tree_icons.png') no-repeat -208px 0;
+ background: url('themes/gray/images/tree_icons.png') no-repeat -208px 0;
 }
 .tree-folder-open {
   background: url('themes/gray/images/tree_icons.png') no-repeat -224px 0;
+}
+.tree-organization {
+  background: url('themes/new_images/organization_open.png') no-repeat;
+}
+.tree-organization-open {
+  background: url('themes/new_images/organization_open.png') no-repeat;
 }
 .tree-file {
   background: url('themes/gray/images/tree_icons.png') no-repeat -240px 0;
