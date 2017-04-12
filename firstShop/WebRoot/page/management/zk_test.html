@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+指纹考勤记录
+</title><link href="CSS/default_css.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<object classid="clsid:A318A9AC-E75F-424C-9364-6B40A848FC6B" width="0" height="0" id="zkonline"></object><comment> <EMBED 
+type="application/x-eskerplus" classid="clsid:A318A9AC-E75F-424C-9364-6B40A848FC6B"codebase="ZKOnline.ocx" width=0 height=0></EMBED></comment>
+
+<script type="text/javascript">
+
+	function submitfingerprint() {
+	alert("submitfingerprint  "+navigator.appName);
+	
+		if (navigator.appName == "Microsoft Internet Explorer") {
+		//alert("zkonline.RegisterTemplate=="+zkonline.RegisterTemplate);
+		//这里的zkonline.RegisterTemplat==""
+			if (typeof zkonline.RegisterTemplate != "undefined") {
+			alert("is not undefined");
+			
+			/*
+				if (zkonline.GetVerTemplate()) {
+					document.getElementById("HiddenField1").value = zkonline.VerifyTemplate;
+				} else {
+					return;
+				}
+				*/
+			} else {
+				var errnum = "0";
+				var emessage = "登录失败.";
+				var etips = "请检查确认已安装ZKOnline客户端和指纹设备已连接.";
+				DisplayError(errnum, emessage, etips);
+			//	return;
+			}
+		} else {
+		alert("in navigator.appName else");
+			if (window["zkonline"]) {
+				if (zkonline.GetVerTemplate()) {
+					document.getElementById("HiddenField1").value = zkonline.VerifyTemplate;
+				} else {
+					return;
+				}
+			} else {
+				var errnum = "0";
+				var emessage = "登录失败.";
+				var etips = "请检查确认已安装ZKOnline客户端和指纹设备已连接.";
+				DisplayError(errnum, emessage, etips);
+				return;
+			}
+		}
+		form1.submit();
+	}
+</script>
+
+<script type="text/javascript"> 
+
+	function DisplayError(ernum, errmessage, errtips) {
+		var supportinfo = "";//\r\n\r\n技术支持:\r\nWeb: wangyang@feilang.cn\r\n"; 
+		var message = "\r\nZKOnline错误\r\n=============\r\n\r\n错误号码: " + ernum + "\r\n错误信息: " + errmessage + "\r\n\r\n纠错提示:\r\n" + errtips + supportinfo;
+		alert(message);
+	}
+
+	function Load(num) {
+		for ( var i = num; i >= 0; i--) {
+		//	window.setTimeout('doUpdate(' + i + ')', (num - i) * 1000);
+		}
+	}
+	//Load(0);
+	submitfingerprint();
+</script>
+</body>
+</html>
+
+
